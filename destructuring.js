@@ -20,7 +20,7 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
-
+let {color, make, model, year} = carDetails
 //Code Here
 
 
@@ -33,8 +33,8 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
+function greeting( obj ) { 
+  let { firstName, lastName, title} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -54,7 +54,11 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation(obj) { 
+  let {utah, california, texas, arizona} = obj;
+  // setting propeties using deconstructuring
+  return utah + california + texas + arizona
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -68,6 +72,12 @@ function greeting( obj ) {
 */
 
 //Code Here
+function ingredients(obj) {
+  let {carb, fat, protein}= obj 
+  
+
+  return [carb, fat, protein]
+  }
 
 
 
@@ -86,11 +96,24 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers ({first, second, third}) {
+  if(first < second ) {
+    if(first < third) {
+      return first
+    }else {
+      return third
+    }
+  } else if(second< third) {
+    return second
+  }else{
+    return third
+  }
+  
+}
 
 
 ////////// PROBLEM 6 //////////
-
+// .length
 /*
   Write a function called numberGroups that will take a destructured object as it's parameter.
   The object properties will be named a, b, and c and their values will be arrays of numbers.
@@ -99,4 +122,16 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function numberGroups({a, b, c}) {
+  if(a.length > b.length) {
+    if(a.length > c.length) {
+      return a
+    } else {
+      return c
+    }
+  } else if(b.length > c.length ) {
+    return b
+  }else {
+    return c
+  }
+}
