@@ -51,6 +51,19 @@ var employees = [
 */
 
 //Code Here
+function employeeUpdater (){
+  for(var i=0; i<employees.length; i++){
+  if (employees[i].firstName === 'Theo'){
+    employees.splice(i,1)
+  } else {
+     if (employees[i].firstName === 'Lorie'){
+      employees[i].department = 'HR'
+    }
+  }
+}
+return employees;
+}
+
 
 
 
@@ -69,7 +82,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+function removeDuplicates(){
+  let duplicates = [];
+  for(let i = 0; i < workplaceAccidents.length; i++){
+    if(duplicates.indexOf(workplaceAccidents[i])=== -1){
+      duplicates.push(workplaceAccidents[i]);
+    }
+  }
+  return duplicates;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -140,7 +161,11 @@ var myCar = {
 
 //Code Here
 
-
+function recordCleaner(){
+  for (var i = 0; i < myCar.accidents.length; i++) {myCar.accidents.atFaultForAccident = false
+  }
+  return myCar
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -159,4 +184,19 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
-
+function looper(arr){
+  newArr = [];
+  for (let i=0;i<arr.length;i++){
+    for (let nestedi = 0; nestedi < arr[i].length; nestedi++){
+      if (arr[i][nestedi] % 2 === 0){
+       arr[i][nestedi] = 'even';
+        }
+      else {
+       arr[i][nestedi] = 'odd'
+        }
+      }
+    }
+    return arr;
+  }
+  
+  
